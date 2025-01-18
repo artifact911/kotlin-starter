@@ -10,7 +10,7 @@ package com.dallas.korben.kotlintgstarter.kot.lesson2
  * Для создания изменяемой коллекции нужно использовать MutableList, MutableSet, MutableMap
  */
 fun main() {
-//    createArray()
+    createArray()
     collectionArrayList()
 }
 
