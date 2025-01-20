@@ -42,4 +42,24 @@ inline - добавляем в объявление функции и всё)
 
          class Country(val name: String = "", val population: Long = 1_000_000) {
          }
-4. Если артументы конструктора val - то они не имеют сеттера. Если var - можно пересеттывать
+4. Если аргументы конструктора val - то они не имеют сеттера. Если var - можно пересеттывать
+5. Кроме свойств в конструкторе, объекту можно подкинуть еще свойство филдами. Тут важно понимать, 
+    если это свойство - то это будет поле, если поведение, то лучше extension-функция
+
+        class Cat(val name: String, var age: Int, val weight: Float) {
+
+          val isOld: Boolean = age >= 12
+
+          fun printInfo() = println("Кличка: $name, Возраст: $age, Вес: $weight")
+          }
+
+val isOld - инициализируется при создании объекта. И если бы даже она была var, то ее значение 
+останется неизменным, даже если коту изменить возраст. Но я могу для правильной работы переопределить 
+getter для isOld() и тогда он будет работать правильно, даже если isOld val
+
+        class Cat(val name: String, var age: Int, val weight: Float) {
+
+            val isOld: Boolean
+                get() = age >= 12
+
+            fun printInfo() = println("Кличка: $name, Возраст: $age, Вес: $weight")
