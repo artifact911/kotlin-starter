@@ -35,4 +35,6 @@ fun p10Task() {
             println("Меня вызвали")
         }
     })
+
+    sportsmen.callWaterProvider { println("Меня вызвали из переданной функции") }
 }

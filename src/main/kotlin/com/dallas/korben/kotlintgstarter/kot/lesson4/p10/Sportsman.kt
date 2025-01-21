@@ -5,4 +5,10 @@ class Sportsman {
         println("Зову водоноса...")
         waterProvider.provideWater()
     }
+
+    // тут хорошо подходит inline, т.к. без него создался бы объект анонимного класса
+    // WaterProvider и у него вызвался бы метод.
+   inline fun callWaterProvider(callFun: () -> Unit) {
+       callFun()
+    }
 }
