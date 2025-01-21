@@ -211,3 +211,19 @@ public - Доступен везде, установлен по умолчани
 protected - доступне внутри класса и у наследников
 
 internal - доступен внутри модуля(gradle)
+
+### Companion object
+
+В Котлин нет ключевого слово static. Но сама статика никуда не делась. Для ее реализации
+используются companion object
+Все что создано внутри companion object является аналогом статики в java и обращаться можно через класс.<>
+
+        class Calc {
+
+            companion object {
+                const val PI = 3.14
+
+                fun square(n: Int) = n * n
+                fun lengthOfCircle(radius: Float) = 2 * PI * radius
+            }
+        }
