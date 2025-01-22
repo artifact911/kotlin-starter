@@ -12,5 +12,7 @@ fun main() {
     for(i in 0 until myList.size()) {
         println(myList.get(i))
     }
+
+    val myList2 = MyArrayList.myListOf("123", "22", 1, 2)
 }
 
